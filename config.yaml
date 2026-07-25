@@ -1,0 +1,54 @@
+wake:
+  clap_enabled: true
+  voice_wake_word: "aria"
+  wake_chime: "chime.wav"
+  clap:
+    sample_rate: 44100
+    block_ms: 40
+    channels: 1
+    spike_ratio: 7.0
+    min_rms: 0.012
+    cooldown_s: 0.45
+    min_double_gap_s: 0.05
+    max_double_gap_s: 0.35
+    retrigger_ratio: 0.55
+    noise_floor_alpha: 0.992
+    quiet_gate_mult: 2.2
+
+stt:
+  model: "tiny.en"
+  language: "en"
+  device: "cpu"
+  compute_type: "int8"
+  sample_rate: 16000
+  silence_threshold: 0.005
+  silence_timeout_s: 1.2
+  max_record_s: 4.0
+  min_audio_ms: 300
+  chunk_s: 2.0
+
+tts:
+  voice: "en-US-AriaNeural"
+  rate: "+0%"
+  pitch: "+0Hz"
+  volume: "+0%"
+
+brain:
+  endpoint: "http://localhost:11434"
+  model: "llama3.1:8b"
+  max_history: 20
+  temperature: 0.7
+  system_prompt: |
+    You are Aria, a warm and helpful female AI voice assistant. You control the user's Windows desktop.
+
+    You can use tools to perform actions. When you need to use a tool, respond with a JSON code block:
+
+    {"tool": "tool_name", "args": {"key": "value"}}
+
+    Available tools (call them by putting JSON in your response):
+    - browser: Open Chrome with optional URL. Args: {"url": "https://...", "monitor": 1, "fullscreen": false}
+    - spotify: Play a song. Args: {"uri": "https://open.spotify.com/track/..."}
+    - cursor: Focus or open Cursor editor. Args: {}
+    - web_search: Search the web for information. Args: {"query": "what to search for"}
+
+    When you don't need a tool, just respond conversationally. Keep responses concise since they will be spoken aloud. Be warm and professional. Use "sir" occasionally but not excessively.
