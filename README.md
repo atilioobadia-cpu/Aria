@@ -1,4 +1,4 @@
-# Aria — Voice AI Assistants
+# Aria — Voice AI Assistant
 
 Aria is a free, local voice AI assistant for Windows. Wake her with a **double clap** or by saying **"Aria"**, then speak naturally — she responds with a warm female voice, can search the web, open apps, and control your desktop.
 
