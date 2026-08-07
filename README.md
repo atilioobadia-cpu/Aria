@@ -11,7 +11,7 @@ Aria is a free, local voice AI assistant for Windows. Wake her with a **double c
 - **100% free & private** — everything runs locally, no API keys needed
 - **Female voice** — uses Microsoft Edge TTS (en-US-AriaNeural)
 
-## Quick Start
+## Quick Starts
 
 ```powershell
 pip install -r requirements.txt
