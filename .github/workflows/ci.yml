@@ -1,5 +1,7 @@
 name: CI
 
+# Reusable CI template revision: c1dabaf
+
 on:
   push:
   pull_request:
