@@ -1,6 +1,7 @@
 name: CI
 
-# Reusable CI template revision: c1dabaf
+# Reusable CI template revision: 1b557ee
+
 
 on:
   push:
